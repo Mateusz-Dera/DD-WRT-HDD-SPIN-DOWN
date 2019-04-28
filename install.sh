@@ -83,21 +83,19 @@ export PATH=$PATH:/opt/bin:/opt/sbin || exit 7
 
 cd /jffs/etc/config/ || exit 10
 
-time=1800
+time=18000
 device="/dev/sdb"
 
 read -p $'Spin-down time (Default 18000): ' read_time
 read -p $'Device (Default /dev/sdb): ' read_device
 
-case $read_time in
-"") ;;
-*) $time=$read_time
-esac
+if [[ -z "$read_time" ]]; then
+    $time=$read_time
+fi
 
-case $read_device in
-"") ;;
-*) $device=$read_device
-esac
+if [[ -z "$read_device" ]]; then
+    $device=$read_device
+fi
 
 echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" > hdd_spin_down.startup || exit 11
 chmod 700 hdd_spin_down.startup || exit 12
