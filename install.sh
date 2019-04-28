@@ -45,7 +45,7 @@ fi
 
 mount -o bind /jffs/opt /opt || exit 5
 
-if ! [ -x "$(command -v xgit)" ]; then
+if ! [ -x "$(command -v /opt/bin/ipkg update)" ]; then
     echo -e "\e[92;1;48;5;239m =========================== \e[0m"
     echo -e "\e[92;1;48;5;240m |  INSTALLING OPTWARE-NG  | \e[0m"
     echo -e "\e[92;1;48;5;241m |  \e[94;1;48;5;241mSelect architecture \e[92;1;48;5;241m   | \e[0m"
