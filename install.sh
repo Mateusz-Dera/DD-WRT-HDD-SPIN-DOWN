@@ -58,7 +58,7 @@ if ! [ -x "$(command -v xgit)" ]; then
     echo -e "\e[92;1;48;5;241m | \e[94;1;48;5;241m 7\e[92;1;48;5;241m PowerPC I686         | \e[0m"
     echo -e "\e[92;1;48;5;240m | \e[94;1;48;5;240m 8\e[92;1;48;5;240m PowerPC x86_64       | \e[0m"
     echo -e "\e[92;1;48;5;239m =========================== \e[0m\n"
-    read -p $'\e[31mNumber\e[0m(Default 0): ' arch
+    read -p $'Number (Default 0): ' arch
 
     case $arch in
     "1") link="http://ipkg.nslu2-linux.org/optware-ng/bootstrap/buildroot-armeabi-ng-bootstrap.sh" ;;
@@ -86,7 +86,7 @@ echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=18000 /dev/sdb\nsdparm --f
 chmod 700 hdd_spin_down.startup || exit 12
 
 while true; do
-    read -p $'\e[31mDo you want to reboot your device?\e[0m (y/n): ' yn
+    read -p $'Do you want to reboot your device? (y/n): ' yn
     case $yn in
         [Yy]* ) reboot;;
         [Nn]* ) exit 0;;
