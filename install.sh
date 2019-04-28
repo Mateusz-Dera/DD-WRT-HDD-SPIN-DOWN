@@ -42,11 +42,7 @@ if ! [ -d "/jffs/etc/config" ]; then
     mkdir /jffs/etc/config || exit 4
 fi
 
-mountpoint -q /jffs/opt || mount -o bind /jffs/opt /opt || exit 5
-
-#if ! [ mount | grep /jffs/opt > /dev/null ]; then
-#    mount -o bind /jffs/opt /opt || exit 5
-#fi
+mount -o bind /jffs/opt /opt || exit 5
 
 if ! [ -x "$(command -v xgit)" ]; then
     echo -e "\e[92;1;48;5;239m =========================== \e[0m"
