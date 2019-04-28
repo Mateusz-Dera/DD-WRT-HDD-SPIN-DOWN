@@ -86,7 +86,7 @@ cd /jffs/etc/config/ || exit 10
 read -p $'Spin-down time (Default 18000): ' time
 read -p $'Device (Default /dev/sdb): ' device
   
-echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" >> spin_off.startup >> hdd_spin_down.startup || exit 11
+echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" > hdd_spin_down.startup || exit 11
 chmod 700 hdd_spin_down.startup || exit 12
 
 while true; do
