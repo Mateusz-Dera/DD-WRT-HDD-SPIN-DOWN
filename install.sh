@@ -77,13 +77,16 @@ if ! [ -x "$(command -v /opt/bin/ipkg update)" ]; then
 
 fi
 
-
 export PATH=$PATH:/opt/bin:/opt/sbin || exit 7
 /opt/bin/ipkg update || exit 8
 /opt/bin/ipkg install sdparm || exit 9
 
 cd /jffs/etc/config/ || exit 10
-echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=18000 /dev/sdb\nsdparm --flexible -6 -l --set STANDBY=1 /dev/sdb" >> spin_off.startup >> hdd_spin_down.startup || exit 11
+
+read -p $'Spin-down time (Default 18000): ' time
+read -p $'Device (Default /dev/sdb): ' device
+  
+echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 /dev/sdb" >> spin_off.startup >> hdd_spin_down.startup || exit 11
 chmod 700 hdd_spin_down.startup || exit 12
 
 while true; do
