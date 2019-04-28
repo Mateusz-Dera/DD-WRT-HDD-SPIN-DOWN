@@ -42,7 +42,7 @@ if ! [ -d "/jffs/etc/config" ]; then
     mkdir /jffs/etc/config || exit 4
 fi
 
-mountpoint -q /jffs/opt || [ mount -o bind /jffs/opt /opt || exit 5 ]
+mountpoint -q /jffs/opt || mount -o bind /jffs/opt /opt || exit 5
 
 #if ! [ mount | grep /jffs/opt > /dev/null ]; then
 #    mount -o bind /jffs/opt /opt || exit 5
