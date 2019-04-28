@@ -92,6 +92,8 @@ read -p $'Spin-down time (Default 18000): ' read_time
 read -p $'Device (Default /dev/sdb): ' read_device
 [ -z "$read_device" ] && echo "/dev/sdb" || device=$read_device
 
+[ -f ./hdd_spin_down.startup ] && rm ./hdd_spin_down.startup
+
 echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" > hdd_spin_down.startup || exit 11
 chmod 700 hdd_spin_down.startup || exit 12
 
