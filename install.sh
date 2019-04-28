@@ -28,6 +28,9 @@ echo -e "\e[92;1;48;5;240m | \e[94;1;48;5;240m Version:\e[92;1;48;5;240m 1.0   |
 echo -e "\e[92;1;48;5;239m =================== \e[0m"
 
 echo
+
+clear
+
 cd /jffs || exit 1
 
 if ! [ -d "/jffs/opt" ]; then
