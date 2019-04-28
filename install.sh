@@ -46,7 +46,7 @@ mountpoint -q /jffs/opt || echo ASD
 
 #if ! [ mount | grep /jffs/opt > /dev/null ]; then
 #    mount -o bind /jffs/opt /opt || exit 5
-fi
+#fi
 
 if ! [ -x "$(command -v xgit)" ]; then
     echo -e "\e[92;1;48;5;239m =========================== \e[0m"
