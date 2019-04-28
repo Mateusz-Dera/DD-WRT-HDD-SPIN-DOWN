@@ -87,14 +87,19 @@ time=18000
 device="/dev/sdb"
 
 read -p $'Spin-down time (Default 18000): ' read_time
-read -p $'Device (Default /dev/sdb): ' read_device
-
-if ! [ -z "$read_time" ]; then
-    $time=$read_time
+if [ -z "$read_time" ]
+then
+      echo "18000"
+else
+     $time= $read_time
 fi
 
-if ! [ -z "$read_device" ]; then
-    $device=$read_device
+read -p $'Device (Default /dev/sdb): ' read_device
+if [ -z "$read_device" ]
+then
+      echo "/dev/sdb"
+else
+     $device= $read_device
 fi
 
 echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" > hdd_spin_down.startup || exit 11
