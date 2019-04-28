@@ -42,8 +42,10 @@ if ! [ -d "/jffs/etc/config" ]; then
     mkdir /jffs/etc/config || exit 4
 fi
 
-if ! [ mount | grep /jffs/opt > /dev/null ]; then
-    mount -o bind /jffs/opt /opt || exit 5
+mountpoint -q /jffs/opt || echo ASD 
+
+#if ! [ mount | grep /jffs/opt > /dev/null ]; then
+#    mount -o bind /jffs/opt /opt || exit 5
 fi
 
 if ! [ -x "$(command -v xgit)" ]; then
