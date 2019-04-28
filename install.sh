@@ -72,7 +72,7 @@ if ! [ -x "$(command -v xgit)" ]; then
     *) link="http://ipkg.nslu2-linux.org/optware-ng/bootstrap/buildroot-armeabihf-bootstrap.sh"
     esac
     
-    [ wget -O - $link | sh ] || exit 6
+    wget -O - $link | sh || exit 6
 
 fi
 
