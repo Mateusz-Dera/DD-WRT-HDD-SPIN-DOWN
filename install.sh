@@ -91,6 +91,6 @@ while true; do
     case $yn in
         [Yy]* ) reboot;;
         [Nn]* ) exit 0;;
-        * ) echo "Please answer \e[31myes \e[0mor \e[31mno\e[0m.";;
+        * ) echo -e "Please answer \e[31myes \e[0mor \e[31mno\e[0m.";;
     esac
 done
