@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# DD-WRT HDD SPIN DOWN
+# DD-WRT HDD Spin Down
 # Copyright © 2019 Mateusz Dera
 
 # This program is free software: you can redistribute it and/or modify
