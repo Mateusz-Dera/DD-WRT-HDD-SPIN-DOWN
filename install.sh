@@ -55,11 +55,4 @@ read -p $'Device (Default /dev/sdb): ' read_device
 echo -e "#!/bin/sh\nsdparm --flexible -6 -l --set SCT=$time $device\nsdparm --flexible -6 -l --set STANDBY=1 $device" > hdd_spin_down.startup || exit 1
 chmod 700 hdd_spin_down.startup || exit 1
 
-while true; do
-    read -p $'Do you want to reboot your device? (y/n): ' yn
-    case $yn in
-        [Yy]* ) reboot;;
-        [Nn]* ) exit 0;;
-        * ) echo -e "Please answer \e[31myes \e[0mor \e[31mno\e[0m.";;
-    esac
-done
+echo -e "Installation complete!\nRestart router"
