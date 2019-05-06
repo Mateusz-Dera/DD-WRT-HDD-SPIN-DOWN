@@ -15,4 +15,4 @@
 # Installation
  - Run: cd /jffs    
  - Run: curl -kLO https://raw.githubusercontent.com/Mateusz-Dera/DD-WRT-HDD-Spin-Down/master/install.sh && sh ./install.sh
- - Reboot router
+ - Restart router
