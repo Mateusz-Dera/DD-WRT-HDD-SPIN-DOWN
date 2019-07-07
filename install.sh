@@ -69,5 +69,6 @@ echo -e 'echo $TIME "Script execution OK. Script: $0" >> $SCRLOG' >> hdd_spin_do
 echo -e 'fi' >> hdd_spin_down.startup || exit 1
 echo -e '/usr/bin/logger -t STOP_$(basename $0) "return code $?"' >> hdd_spin_down.startup || exit 1
 echo -e 'exit $?' >> hdd_spin_down.startup || exit 1
+echo -e "Installation complete!\nRestart router"
 
 chmod 700 hdd_spin_down.startup || exit 1
