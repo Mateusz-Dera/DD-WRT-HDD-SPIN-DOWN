@@ -2,7 +2,7 @@
 - HDD spin down script for DD-WRT
 
 # Info
-  - Home Assistant 0.92.1
+  - Spin down HDD after time
   - Tested on Netgear R6400v2 (DD-WRT v3.0-r37305)
   - This script install DD-WRT Easy Optware-ng Installer (If it's needed)
   - https://github.com/Mateusz-Dera/DD-WRT-Easy-Optware-ng-Installer
